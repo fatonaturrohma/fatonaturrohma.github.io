@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatonaturrohma Full-Stack Developer</title>
+    <meta name="description" content="Portofolio [Nama Anda], seorang Junior Full Stack Developer yang antusias membangun aplikasi web modern.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- Gaya Global --- */
+        :root {
+            --primary-color: #4F46E5; /* Indigo */
+            --secondary-color: #10B981; /* Emerald */
+            --background-color: #F9FAFB; /* Gray-50 */
+            --text-color: #1F2937; /* Gray-800 */
+            --card-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .hero .cta-buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 28px;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hero .cta-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Tentang Saya Section --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            max-width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- Keahlian Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--card-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        /* --- Proyek Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: var(--card-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .project-tech span {
+            background-color: #E5E7EB;
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        }
+
+        .project-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- Kontak Section --- */
+        .contact {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2::after {
+            background: var(--secondary-color);
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 2rem;
+            color: white;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111827;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .about-content { flex-direction: column; }
+            .about-img { order: -1; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER / HERO SECTION ========== -->
+    <header class="hero" id="home">
+        <div class="container">
+            <h1>Fatonaturrohma</h1>
+            <p>Full-Stack Developer</p>
+            <p>Antusias membangun aplikasi web yang efisien dan user-friendly dari frontend hingga backend.</p>
+            <div class="cta-buttons">
+                <a href="#projects"><i class="fas fa-briefcase"></i> Lihat Proyek</a>
+                <a href="https://drive.google.com/uc?export=download&id=101uadgXC1As364Ot3GpZxiZh30I-o5Q5" target="_blank"><i class="fas fa-download"></i> Unduh CV</a>
+                <a href="https://www.kompasiana.com/fatonaturrohma2577" target="_blank"><i class="fas fa-blog"></i> Lihat Blog</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========== TENTANG SAYA SECTION ========== -->
+        <section id="about" class="container">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Halo, Saya Fatonaturrohma</h3>
+                    <p>Perjalanan saya sebagai seorang developer dimulai dari ketertarikan saya pada bagaimana teknologi bisa memecahkan masalah sehari-hari. Saya mendalami dunia programming di kampus dan memperdalam skill saya di bootcamp.</p>
+                    <p>Saya menikmati proses mengambil ide abstrak dan mengubahnya menjadi produk digital yang fungsional, mulai dari desain antarmuka yang intuitif di <strong>frontend</strong> hingga logika bisnis dan manajemen data yang robust di <strong>backend</strong>.</p>
+                    <p>Saya saat ini sedang mencari kesempatan sebagai Full-Stack Developer di mana saya dapat menerapkan skill saya dan berkontribusi pada proyek-proyek yang bermakna.</p>
+                </div>
+                <div class="about-img">
+                    <img src="foto.png" alt="Foto fatonaturrohma">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== KEAHLIAN SECTION ========== -->
+        <section id="skills">
+            <div class="container">
+                <h2>Keahlian</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Frontend</h3>
+                        <p>HTML, CSS, JavaScript (ES6+), React.js, Tailwind CSS, State Management (Redux/Context API)</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                        <p>Node.js, Express.js, RESTful API, Autentikasi (JWT), GraphQL (dasar)</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Database</h3>
+                        <p>MongoDB (NoSQL), PostgreSQL (SQL), Desain Database Relasional &amp; Non-Relasional</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                        <p>Git, GitHub, Postman, Docker (dasar), Vercel, Netlify, Heroku</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROYEK SECTION ========== -->
+        <section id="projects">
+            <div class="container">
+                <h2>Proyek</h2>
+                <div class="projects-grid">
+                    <!-- --- Proyek 1 --- -->
+                    <article class="project-card">
+                        <img src="[Link Screenshot/GIF Proyek 1]" alt="Screenshot [Nama Proyek 1]">
+                        <div class="project-content">
+                            <h3>[Nama Proyek 1]</h3>
+                            <p>[Deskripsi singkat proyek. Apa masalah yang diselesaikan? Untuk siapa ini dibuat?]</p>
+                            <div class="project-tech">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="[Link Live Demo Proyek 1]" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="[Link Repository GitHub Proyek 1]" target="_blank"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- --- Proyek 2 --- -->
+                    <article class="project-card">
+                        <img src="[Link Screenshot/GIF Proyek 2]" alt="Screenshot [Nama Proyek 2]">
+                        <div class="project-content">
+                            <h3>[Nama Proyek 2]</h3>
+                            <p>[Deskripsi singkat proyek. Apa masalah yang diselesaikan? Untuk siapa ini dibuat?]</p>
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>Express.js</span>
+                                <span>PostgreSQL</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="[Link Live Demo Proyek 2]" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="[Link Repository GitHub Proyek 2]" target="_blank"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- --- Proyek 3 (Opsional) --- -->
+                    <article class="project-card">
+                        <img src="[Link Screenshot/GIF Proyek 3]" alt="Screenshot [Nama Proyek 3]">
+                        <div class="project-content">
+                            <h3>[Nama Proyek 3]</h3>
+                            <p>[Deskripsi singkat proyek. Apa masalah yang diselesaikan? Untuk siapa ini dibuat?]</p>
+                            <div class="project-tech">
+                                <span>Next.js</span>
+                                <span>Prisma</span>
+                                <span>MySQL</span>
+                                <span>Chakra UI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="[Link Live Demo Proyek 3]" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="[Link Repository GitHub Proyek 3]" target="_blank"><i class="fab fa-github"></i> Kode</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== KONTAK SECTION ========== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Mari Terhubung!</h2>
+            <p>Saya selalu terbuka untuk diskusi tentang peluang kerja atau proyek menarik.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/fatonaturrohma" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/fatonaturrohma" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/fatonaturrohma" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>© 2024 Fatonaturrohma. All Rights Reserved.</p>
+    </footer>
+
+
+</body></html>
